@@ -105,3 +105,20 @@ inventory.remove(inventory[1])
 print(inventory)
 # Print the first and last items
 print(inventory[0], inventory[-1])
+
+################ Exercise 3 — Racing Game Lap Times (Tuple Practice) ################
+
+# Lap times in seconds:
+lap_times = (62.1, 60.5, 61.2, 59.9)
+# Tasks:
+
+# Print the fastest lap
+flap = max(lap_times)
+print(f"Fastest lap: {flap}")
+# Print the slowest lap
+
+# Convert to a list and add a new lap time
+
+# Convert back to a tuple
+
+# Print the new tuple
