@@ -7,10 +7,11 @@
 # create new file with X
 newFile = open("myfile.txt", "x")
 newFile = open("myfile.txt", "w")
-newFile.write("Line 01 Added\n")
-newFile.write("Line 02 Added\n")
-newFile.write("Line 03 Added\n")
+
+for i in range(1, 11): 
+    newFile.write("Line " + str(i) + "\n")
 newFile.close()
 
-newFile = open("dataOne.txt", "r")
-print(newFile.read())
+with open("myfile.txt", "r") as newFile:
+    getFile = newFile.read()
+    print(getFile)
