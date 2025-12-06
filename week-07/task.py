@@ -1,7 +1,7 @@
 # The program should consist of the following two functions:
 
 # The first function should be named observed and should have no parameters.
-def observed()
+# def observed()
 # The function should create a set named observations.
 # The function should populate the set with the following items:
 #     "Car", "Sky Scraper", "Sky Scraper", "Bike", "House", "House"
