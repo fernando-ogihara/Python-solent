@@ -40,3 +40,5 @@ def run_task2():
     print(counts)
 
 run_task2()
+
+# why not
