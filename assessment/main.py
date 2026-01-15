@@ -22,6 +22,13 @@ def main():
     # title
     tui.display_title("Disneyland Review Analyser")
 
+    #read/load csv
+    file_path = 'data_source/disneyland_reviews.csv'
+    data, row_count = process.load_data(file_path)
+
+    # debugging
+    print(f"Loaded {row_count} reviews from the data file.\n")
+
 # main() fn called
 if __name__ == "__main__":
     main()                     
