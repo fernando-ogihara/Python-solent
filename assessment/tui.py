@@ -7,3 +7,12 @@ Any errors or invalid inputs should be handled appropriately.
 Please note that you do not need to read the data file or perform any other such processing in this module.
 """
 
+def display_title(title):
+    """
+    Show an string - Title
+    count the title length to create the border as required
+    """
+    border = "-" * len(title)
+    print(f"\n{border}")
+    print(title)
+    print(f"{border}\n")
