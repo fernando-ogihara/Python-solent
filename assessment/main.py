@@ -8,3 +8,20 @@ Note:   any user input/output should be done in the module 'tui'
         any processing should be done in the module 'process'
         any visualisation should be done in the module 'visual'
 """
+
+# IMPORTS
+import tui, process, visual
+
+# MAIN PROGRAM JOURNEY
+def main():
+    """
+    Main fn runs the Disneyland Review Analyser application.
+    manage the application flow, show the menus, and call/do the required tasks.
+    """
+
+    # title
+    tui.display_title("Disneyland Review Analyser")
+
+# main() fn called
+if __name__ == "__main__":
+    main()                     
