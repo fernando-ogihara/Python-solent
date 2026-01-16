@@ -26,8 +26,69 @@ def main():
     file_path = 'data_source/disneyland_reviews.csv'
     data, row_count = process.load_data(file_path)
 
-    # debugging
-    print(f"Loaded {row_count} reviews from the data file.\n")
+    # debugging -> put in tui later
+    # print(f"Loaded {row_count} reviews from the data file.\n")
+
+    if data is not None and row_count > 0:
+        tui.check_data(row_count)
+    else:
+        tui.display_error_message(f"Failed to load data from {file_path} or dataset is empty. Exiting.")
+        return #Exit
+    
+    #run the menu while true
+    while True:
+        #show to the user the main menu and get their choice.
+        main_choice = tui.display_main_menu()
+
+        tui.confirm_choice(main_choice, "main")
+
+        #check the user choice
+        if main_choice == 'A':
+        
+            # build view data submenu
+            view_data_choice = tui.display_view_data_submenu_and_get_choice()
+            tui.confirm_choice(view_data_choice, "view_data_submenu")
+
+            #test options
+            if view_data_choice == 'A':
+                print("View Reviews by Park")
+            elif view_data_choice == 'B':
+                print("Number of Reviews by Park and Reviewer Location")
+            elif view_data_choice == 'C':
+               print("Average Score per year by Park")
+            elif view_data_choice == 'D':
+               print("Average Score per Park by Reviewer Location")
+            else:
+                tui.display_invalid_choice()
+
+        elif main_choice == 'B':
+
+            # build view data submenu
+            visualise_data_choice = tui.display_visualise_data_submenu_and_get_choice()
+            tui.confirm_choice(visualise_data_choice, "visualise_data_submenu")
+
+            if visualise_data_choice == 'A':
+                print("Most Reviewed Parks")
+            elif visualise_data_choice == 'B':
+                print("Average Scores")
+            elif visualise_data_choice == 'C':
+                print("Park Ranking by Nationality")
+            elif visualise_data_choice == 'D':
+                print("Most Popular Month by Park")
+            else:
+                tui.display_invalid_choice()
+
+        elif main_choice == 'C':
+           print("Export Data submenu selected.")
+
+        elif main_choice == 'X':
+            #terminate the program
+            tui.display_exit_message()
+            break #Exit the while loop.
+        else:
+            #invalid choice.
+            tui.display_invalid_choice()
+
 
 # main() fn called
 if __name__ == "__main__":
