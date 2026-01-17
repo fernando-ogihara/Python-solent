@@ -27,7 +27,7 @@ def load_data(file_path):
         print(f"Error reading file: {e}")
     return [], 0
 
-def get_reviews_by_park(data, park_name):
+def get_park_rev(data, park_name):
     """
     Returns all reviews for a given park (case-insensitive).
     """
@@ -71,7 +71,7 @@ def get_average_score_by_park_and_year(data, park_name, year):
     return total / count if count else None
 
 
-def get_park_rev(data, park_name):
+def get_park_review_counts(data):
     """
     Counts the num of reviews per park.
     => highest to lowest.
