@@ -156,7 +156,7 @@ def display_review_count(count, park_name, location):
     if count == 0:
         print("Check if the data entered is typed correctly.\n")
 
-def display_average_score(avg_score, park_name, year):
+def display_avg(avg_score, park_name, year):
     """
     shows the avg for a specifiv park/year
     """
@@ -165,9 +165,9 @@ def display_average_score(avg_score, park_name, year):
     else:
         print(f"No reviews found for '{park_name}' in {year}.\n")
 
-def display_average_scores_per_park_by_location(park_avg_scores_by_location):
+def display_avg_park_location(park_avg_scores_by_location):
     """
-    shows the avg per ran/location
+    shows the avg per park/location
     """
     if not park_avg_scores_by_location:
         print("No average available.\n")

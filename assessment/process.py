@@ -38,7 +38,7 @@ def get_park_rev(data, park_name):
     ]
 
 
-def get_review_count_by_park_and_location(data, park_name, location):
+def get_park_and_location(data, park_name, location):
     """
     Counts how many reviews a park received from a specific location.
     """
@@ -52,7 +52,7 @@ def get_review_count_by_park_and_location(data, park_name, location):
     )
 
 
-def get_average_score_by_park_and_year(data, park_name, year):
+def get_avg_park_year(data, park_name, year):
     """
     Calculates the avg rating for a park in a given year.
     """
@@ -158,7 +158,7 @@ def get_average_rating_by_month_for_park(data, park_name):
     }
 
 
-def get_average_score_per_park_by_location(data):
+def get_avg_park_location(data):
     """
     calc avg per park
     => rating in descending order.
