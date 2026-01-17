@@ -127,7 +127,7 @@ def get_top_locations_by_avg_rating_for_park(data, park_name, top_n=10):
     return sorted(averages, key=lambda x: x[1], reverse=True)[:top_n]
 
 
-def get_average_rating_by_month_for_park(data, park_name):
+def get_month_avg(data, park_name):
     """
     calc the avg per month for a given park.
     Returns a dictionary
