@@ -51,13 +51,26 @@ def main():
 
             #test options
             if view_data_choice == 'A':
-                print("View Reviews by Park")
+                #reviews by Park
+                park_name = tui.get_park_name()
+                reviews = process.get_park_rev(data, park_name)
+                tui.display_reviews(reviews, park_name)
             elif view_data_choice == 'B':
-                print("Number of Reviews by Park and Reviewer Location")
+                #reviews by park and Location
+                park_name = tui.get_park_name()
+                location = tui.get_location()
+                count = process.get_park_and_location(data, park_name, location)
+                tui.display_review_count(count, park_name, location)
             elif view_data_choice == 'C':
-               print("Average Score per year by Park")
+                #avg per year/park
+                park_name = tui.get_park_name()
+                year = tui.get_year()
+                avg_score = process.get_avg_park_year(data, park_name, year)
+                tui.display_avg(avg_score, park_name, year)
             elif view_data_choice == 'D':
-               print("Average Score per Park by Reviewer Location")
+                #avg per park by Location
+                avg_scores_loc = process.get_avg_park_location(data)
+                tui.display_avg_park_location(avg_scores_loc)
             else:
                 tui.display_invalid_choice()
 

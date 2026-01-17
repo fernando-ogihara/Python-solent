@@ -73,7 +73,7 @@ def confirm_choice(choice, menu_type):
 
 def display_invalid_choice():
     """
-    display the error msg for invalid option
+    error msg
     """
     print("Invalid choice. Please try again.\n")
 
@@ -82,3 +82,105 @@ def display_exit_message():
     exit msg
     """
     print("Thanks for using our application !\n")
+
+def display_view_data_submenu_and_get_choice():
+    """
+    Displays the 'View Data' submenu options and prompts for user choice.
+    Returns:
+        str: The user's submenu choice as an uppercase string.
+    """
+    print("Please enter one of the following options:")
+    print("[A] View Reviews by Park")
+    print("[B] Number of Reviews by Park and Reviewer Location")
+    print("[C] Average Score per year by Park")
+    print("[D] Average Score per Park by Reviewer Location")
+    return input().strip().upper()
+
+def display_visualise_data_submenu_and_get_choice():
+    """
+    Displays the 'Visualise Data' submenu options and prompts for user choice.
+    Returns:
+        str: The user's submenu choice as an uppercase string.
+    """
+    print("Please enter one of the following options:")
+    print("[A] Most Reviewed Parks")
+    print("[B] Average Scores")
+    print("[C] Park Ranking by Nationality")
+    print("[D] Most Popular Month by Park")
+    return input().strip().upper()
+
+def get_park_name():
+    """
+    asks the user the park name
+    """
+    return input("Enter the Disneyland park name (e.g., 'Disneyland_Paris'): ").strip()
+
+def get_location():
+    """
+    asks the user the location
+    """
+    return input("Enter the reviewer's location (e.g., 'United States'): ").strip()
+
+def get_year():
+    """
+    asks the user the year
+    """
+    while True:
+        year = input("Enter the year (e.g., '2019'): ").strip()
+        if year.isdigit() and len(year) == 4:
+            return year
+        print("Invalid format. Please enter a 4-digit year - YYYY.")
+
+def display_reviews(reviews, park_name):
+    """
+    shows the reviews for a specific park
+    """
+    if not reviews:
+        print(f"No reviews found for '{park_name}'. Please check the park name.\n")
+        return
+
+    print(f"\n--- Reviews for {park_name} ({len(reviews)} reviews) ---")
+    for i, review in enumerate(reviews, start=1):
+        print(f"Review {i}:")
+        print(f"  Rating: {review.get('Rating', 'N/A')}/5")
+        print(f"  Date: {review.get('Year_Month', 'N/A')}")
+        print(f"  Location: {review.get('Reviewer_Location', 'N/A')}")
+        print("-" * 20)
+    print("------------------------------------------\n")
+
+def display_review_count(count, park_name, location):
+    """
+    shows the num of reviews for a specifica park and location
+    """
+    print(f"\n'{park_name}' received {count} reviews from '{location}'.\n")
+    if count == 0:
+        print("Check if the data entered is typed correctly.\n")
+
+def display_average_score(avg_score, park_name, year):
+    """
+    shows the avg for a specifiv park/year
+    """
+    if avg_score is not None:
+        print(f"\nThe average rating for '{park_name}' in {year} is: {avg_score:.2f}/5\n")
+    else:
+        print(f"No reviews found for '{park_name}' in {year}.\n")
+
+def display_average_scores_per_park_by_location(park_avg_scores_by_location):
+    """
+    shows the avg per ran/location
+    """
+    if not park_avg_scores_by_location:
+        print("No average available.\n")
+        return
+
+    print("\n--- Average Scores per Park by Reviewer Location ---")
+    for park, scores in park_avg_scores_by_location.items():
+        print(f"\nPark: {park}")
+        if not scores:
+            print("  No data available.")
+            continue
+        #Sort locations by descending
+        for location, avg in sorted(scores, key=lambda x: x[1], reverse=True):
+            print(f"  - {location}: {avg:.2f}/5")
+    print("--------------------------------------------------\n")
+
