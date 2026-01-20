@@ -2,3 +2,7 @@ test01.docx
 test01.zip
 test02.docx
 test02.zip
+project_template
+assessment/__pycache__/process.cpython-312.pyc
+assessment/__pycache__/tui.cpython-312.pyc
+assessment/__pycache__/visual.cpython-312.pyc
