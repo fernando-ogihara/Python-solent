@@ -5,6 +5,10 @@ import json
 import csv
 from collections import defaultdict
 
+"""
+Class creation for park analysis and the export methods
+then we can call in main -> import oop_exporter and use it or import oop_exporter as exporter
+"""
 class ParkAnalyzer:
     def __init__(self, data):
         """
