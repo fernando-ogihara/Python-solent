@@ -184,3 +184,25 @@ def display_avg_park_location(park_avg_scores_by_location):
             print(f"  - {location}: {avg:.2f}/5")
     print("--------------------------------------------------\n")
 
+#EXPORT FUNCTIONS CAN BE ADDED HERE
+def display_export_menu_and_get_choice():
+    """
+    format options for export
+    """
+    print("Please choose the format you would like to export:")
+    print("[T] Text File (.txt)")
+    print("[C] CSV File (.csv)")
+    print("[J] JSON File (.json)")
+    return input().strip().upper()
+
+def get_filename_input():
+    """
+    requests the filename from the user
+    """
+    return input("Enter the filename (e.g., 'report'): ").strip()
+
+def display_export_success_message(filename):
+    """
+    confirarmation msg
+    """
+    print(f"\nData successfully exported to '{filename}'!\n")
