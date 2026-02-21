@@ -1,0 +1,21 @@
+Disneyland Park Report
+========================================
+
+ParkName: Disneyland_California
+NumberOfReviews: 19406
+NumberOfPositiveReviews: 16499
+AverageReviewScore: 4.41
+NumberOfUniqueCountries: 111
+------------------------------
+ParkName: Disneyland_HongKong
+NumberOfReviews: 9617
+NumberOfPositiveReviews: 7744
+AverageReviewScore: 4.2
+NumberOfUniqueCountries: 115
+------------------------------
+ParkName: Disneyland_Paris
+NumberOfReviews: 13629
+NumberOfPositiveReviews: 9674
+AverageReviewScore: 3.96
+NumberOfUniqueCountries: 132
+------------------------------

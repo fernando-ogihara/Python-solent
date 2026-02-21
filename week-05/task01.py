@@ -122,3 +122,8 @@ print(f"Fastest lap: {flap}")
 # Convert back to a tuple
 
 # Print the new tuple
+
+toys = {"car", "robot", "doll"}
+toys = toys.union({"fidget spinner"})
+
+print(toys)
