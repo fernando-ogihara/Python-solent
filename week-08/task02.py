@@ -17,16 +17,19 @@ def small():
     x = [1, 1, 2, 2, 1]
     y = [1, 2, 2, 1, 1]
     plt.plot(x, y, "r:o", label="Small Square")
+    # r:o means red dotted line with circle markers
 
 def medium():
     x = [0, 0, 3, 3, 0]
     y = [0, 3, 3, 0, 0]
     plt.plot(x, y, "g--s", label="Medium Square")
+    # g--s means green dashed line with square markers
 
 def large():
     x = [-1, -1, 4, 4, -1]
     y = [-1, 4, 4, -1, -1]
     plt.plot(x, y, "b-p", label="Large Square")
+    # b-p means blue solid line with pentagon markers 
 
 def show_all():
     small()
